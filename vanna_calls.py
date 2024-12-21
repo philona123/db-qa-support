@@ -6,15 +6,6 @@ vn = None
 
 @st.cache_resource(ttl=3600)
 def setup_vanna():
-    # # vn = VannaDefault(api_key=st.secrets.get("VANNA_API_KEY"), model='chinook')
-    # api_key = "f4a685108e044b1389e2a58302777739"
-    # vanna_model_name = "qasupport"
-    # vn = VannaDefault(model=vanna_model_name, api_key=api_key)
-    # vn.connect_to_postgres(host='localhost', dbname='clinic_cloud', user='postgres', password='postgres', port='5432')
-    # df_information_schema = vn.run_sql("SELECT * FROM INFORMATION_SCHEMA.COLUMNS")
-    # plan = vn.get_training_plan_generic(df_information_schema)
-    # vn.train(plan=plan)
-    # return vn
     global vn
     if vn is None:
         api_key = st.secrets["API_KEY"]
